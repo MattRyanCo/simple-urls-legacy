@@ -1,0 +1,27 @@
+{
+  "name": "simple-urls-legacy",
+  "description": "Development files for the Simple URLs Legacy plugin.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/capwebsolutions/simple-urls-legacy"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "node-wp-i18n": "^1.2.3"
+  },
+  "scripts": {
+    "makepot": "wpi18n makepot --exclude=vendor,node_modules",
+    "addtextdomain": "wpi18n addtextdomain --exclude=vendor,node_modules"
+  },
+  "plugin": {
+    "name": "Simple URLs Legacy",
+    "uri": "https://github.com/capwebsolutions/simple-urls-legacy",
+    "description": "Simple URLs Legacy is a complete URL management system that allows you create, manage, and track outbound links from your site by using custom post types and 301 redirects. The way it used to be.",
+    "author": "Cap Web Solutions",
+    "authoruri": "https://capwebsolutions.com/",
+    "version": "1.0.0",
+    "license": "GPL-2.0+",
+    "licenseuri": "https://www.gnu.org/licenses/gpl-2.0.html",
+    "textdomain": "simple-urls-legacy"
+  }
+}
