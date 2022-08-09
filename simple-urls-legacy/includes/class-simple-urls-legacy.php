@@ -24,9 +24,9 @@ class Simple_Urls_Legacy {
 	/**
 	 * Load textdomain.
 	 */
-	public function load_textdomain() {
-		 load_plugin_textdomain( 'simple-urls-legacy', false, SIMPLE_URLS_LEGACY_DIR . '/languages' );
-	}
+    public function load_textdomain() {
+        load_plugin_textdomain( 'simple-urls-legacy', false, SIMPLE_URLS_LEGACY_DIR . '/languages' );
+   }
 
 	/**
 	 * Register Post Type.

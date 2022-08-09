@@ -1,5 +1,5 @@
 === Simple URLs Legacy ===
-Contributors: capwebsolutions, nathanrice, studiopress, cliffpaulick, marksabbath, modernnerd
+Contributors: rynonet, nathanrice, studiopress, cliffpaulick, marksabbath, modernnerd
 Donate link: https://www.paypal.com/donate/?hosted_button_id=9XWWUHUSZAFRJ
 Tags: redirect, click tracking, custom post types
 Requires at least: 5.9
@@ -14,17 +14,17 @@ Simple URLs Legacy is a fork of the orignial plugin by Nathan Rice and Studiopre
 
 == Usage ==
 
-Simple URLs Legacy adds a new custom post type to your Admin menu, where you can create, edit, delete, and manage URLs. It stores click counts in the form of a custom field on that custom post type, so it scales really well.
+Simple URLs Legacy adds a new custom post type to your admin menu, where you can create, edit, delete, and manage URLs. It stores click counts in the form of a custom field on that custom post type, so it scales really well.
 
 And, by avoiding page based redirects, which is the current trend in masking affiliate links, we avoid any issues with permalink conflicts, and therefore avoid any performance issues.
 
 1. Upload the entire `simple-urls-legacy` folder to the `/wp-content/plugins/` directory
-1. DO NOT change the name of the `simple-urls-legacy` folder
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Navigate to `Settings > Permalinks` and save them. Yes, just click save. Trust me.
-1. Navigate to the `Simple URLs` menu
-1. Create a new URL, or manage existing URLs.
-1. Publish and use the URLs however you want!
+2. DO NOT change the name of the `simple-urls-legacy` folder
+3. Activate the plugin through the 'Plugins' menu in WordPress
+4. Navigate to `Settings > Permalinks`. That's it. Just open that screen and it saves. Trust me.
+5. Navigate to the `Simple URLs Legacy` menu
+6. Create a new URL, or manage existing URLs.
+7. Publish and use the URLs however you want!
 
 == Frequently Asked Questions ==
 
@@ -44,6 +44,8 @@ add_filter( 'simple_urls_legacy_slug', function(){
     return 'redirect-me';
 });
 ```
+The text "redirect-me" will replace the default "go" in example.com/go/my-simple-url.
+Eg. example.com/redirect-me/my-simple-url/
 
 == Screenshots ==
 
@@ -52,7 +54,8 @@ add_filter( 'simple_urls_legacy_slug', function(){
 
 == Changelog ==
 
-= 0.10.0  08/09/2022 =
+= 0.10.0  =
+* 08/09/2022
 * Reverted plugin to last known state under original author - Nathan Rice (v0.9.9).
 * Renamed plugin from Simple URLs to Simple URLs Legacy.
 * URL structure modifier filter changed from 'simple_urls_slug' to 'simple_urls_legacy_slug'.
