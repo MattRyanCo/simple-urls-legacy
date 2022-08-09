@@ -1,16 +1,16 @@
-=== Simple URLs Legacy by Cap Web Solutiuons ===
-Contributors: capwebsolutions
+=== Simple URLs Legacy ===
+Contributors: capwebsolutions, nathanrice, studiopress, cliffpaulick, marksabbath, modernnerd
 Donate link: https://www.paypal.com/donate/?hosted_button_id=9XWWUHUSZAFRJ
 Tags: redirect, click tracking, custom post types
 Requires at least: 5.9
 Tested up to: 6.1
-Stable tag: 1.0.0
+Stable tag: 0.10.0
 
-Simple URLs Legacy is a complete URL management system that allows you create, manage, and track outbound links from your site.
+Simple URLs Legacy is a fork of the orignial plugin by Nathan Rice and Studiopress team. As such, it is a complete URL management system that allows you create, manage, and track outbound links from your site by using custom post types and 301 redirects, as it was meant to be.
 
 == Description ==
 
-Simple URLs Legacy is a complete URL management system that allows you create, manage, and track outbound links from your site by using custom post types and 301 redirects. The way it used to be.
+Simple URLs Legacy is a fork of the orignial plugin by Nathan Rice and Studiopress team. As such, it is a complete URL management system that allows you create, manage, and track outbound links from your site by using custom post types and 301 redirects, as it was meant to be.
 
 == Usage ==
 
@@ -52,10 +52,12 @@ add_filter( 'simple_urls_legacy_slug', function(){
 
 == Changelog ==
 
-= 1.0.0  08/05/2022 =
-* Reverted plugin to last known state under original author - Nathan Rice.
-* Renamed plugin from Simple URLs to Simple URLs Legacy by Cap Web Solutions.
-* URL structure modifier filter changed from 'simple_urls_slug' to 'simple_urls_legacy_slug'
+= 0.10.0  08/09/2022 =
+* Reverted plugin to last known state under original author - Nathan Rice (v0.9.9).
+* Renamed plugin from Simple URLs to Simple URLs Legacy.
+* URL structure modifier filter changed from 'simple_urls_slug' to 'simple_urls_legacy_slug'.
+* Reworked naming conventions to use simple-urls-legacy namespace and package name.
+* Removed build/dependency source files.
 
 = 0.9.9 =
 * Fixed URLs not properly redirecting.
