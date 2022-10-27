@@ -1,4 +1,4 @@
-# Simple URLs Legacy by Cap Web Solutions
+# Simple URLs Legacy by Matt Ryan
 
 Plugin that allows you to create custom redirects for pages and posts via a custom field.
 
