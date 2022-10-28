@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Simple URLs Legacy file.
  *
@@ -24,15 +23,14 @@ class Simple_Urls_Legacy {
 	/**
 	 * Load textdomain.
 	 */
-    public function load_textdomain() {
-        load_plugin_textdomain( 'simple-urls-legacy', false, SURLEG_DIR . '/languages' );
-   }
+	public function load_textdomain() {
+		load_plugin_textdomain( 'simple-urls-legacy', false, SURLEG_DIR . '/languages' );
+	}
 
 	/**
 	 * Register Post Type for legacy URLs.
 	 */
 	public function register_post_type() {
-		// $slug = 'surl';
 		$slug = 'surl';
 
 		$rewrite_slug_default = 'go';
@@ -101,7 +99,6 @@ class Simple_Urls_Legacy {
 	 * Count and redirect function.
 	 */
 	public function count_and_redirect() {
-		// if ( ! is_singular( 'surl' ) ) {
 		if ( ! is_singular( 'surl' ) ) {
 				return;
 		}

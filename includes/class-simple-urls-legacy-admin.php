@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Simple_Urls_Admin file.
  *
