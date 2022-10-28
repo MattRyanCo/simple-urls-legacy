@@ -25,14 +25,15 @@ class Simple_Urls_Legacy {
 	 * Load textdomain.
 	 */
     public function load_textdomain() {
-        load_plugin_textdomain( 'simple-urls-legacy', false, SIMPLE_URLS_LEGACY_DIR . '/languages' );
+        load_plugin_textdomain( 'simple-urls-legacy', false, SURLEG_DIR . '/languages' );
    }
 
 	/**
-	 * Register Post Type.
+	 * Register Post Type for legacy URLs.
 	 */
 	public function register_post_type() {
-		$slug = 'surleg';
+		// $slug = 'surl';
+		$slug = 'surl';
 
 		$rewrite_slug_default = 'go';
 
@@ -100,18 +101,19 @@ class Simple_Urls_Legacy {
 	 * Count and redirect function.
 	 */
 	public function count_and_redirect() {
-		if ( ! is_singular( 'surleg' ) ) {
-			return;
+		// if ( ! is_singular( 'surl' ) ) {
+		if ( ! is_singular( 'surl' ) ) {
+				return;
 		}
 
 		global $wp_query;
 
 		// Update the count.
-		$count = isset( $wp_query->post->_surleg_count ) ? (int) $wp_query->post->_surleg_count : 0;
-		update_post_meta( $wp_query->post->ID, '_surleg_count', $count + 1 );
+		$count = isset( $wp_query->post->_surl_count ) ? (int) $wp_query->post->_surl_count : 0;
+		update_post_meta( $wp_query->post->ID, '_surl_count', $count + 1 );
 
 		// Handle the redirect.
-		$redirect = isset( $wp_query->post->ID ) ? get_post_meta( $wp_query->post->ID, '_surleg_redirect', true ) : '';
+		$redirect = isset( $wp_query->post->ID ) ? get_post_meta( $wp_query->post->ID, '_surl_redirect', true ) : '';
 
 		/**
 		 * Filter the redirect URL.

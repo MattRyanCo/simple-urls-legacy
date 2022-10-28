@@ -12,6 +12,8 @@ Simple URLs Legacy adds a new custom post type to your admin menu, where you can
 
 And, by avoiding page based redirects, which is the current trend in masking affiliate links, we avoid any issues with permalink conflicts, and therefore avoid any performance issues.
 
+Note, the Lasso / Lasso Lite version of Simple URLs must be deactivated to use this legacy version of the plugin. A notice to this effect is displayed in the admin if you activate this version while the Lasso / Lasso Lite version is active. 
+
 - Upload the entire `simple-urls-legacy` folder to the `/wp-content/plugins/` directory
 - DO NOT change the name of the `simple-urls-legacy` folder
 - Activate the plugin through the 'Plugins' menu in WordPress

@@ -54,6 +54,12 @@ Eg. example.com/redirect-me/my-simple-url/
 
 == Changelog ==
 
+= 0.10.1  =
+* 10/28/2022 #5FTF #WebDevStudios
+* Added conflict notice in admin if Simple URLs plugin is running.
+* Reworked constants for better readability.
+* Added build/dependency source files back in with updated dependencies.
+
 = 0.10.0  =
 * 08/09/2022
 * Reverted plugin to last known state under original author - Nathan Rice (v0.9.9).
