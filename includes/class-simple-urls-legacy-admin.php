@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Simple_Urls_Admin file.
  *
@@ -20,7 +19,7 @@ class Simple_Urls_Legacy_Admin {
 		add_action( 'admin_menu', array( $this, 'add_meta_box' ) );
 		add_action( 'save_post', array( $this, 'meta_box_save' ), 1, 2 );
 		add_action( 'manage_posts_custom_column', array( $this, 'columns_data' ) );
-		add_filter( 'manage_edit-surleg_columns', array( $this, 'columns_filter' ) );
+		add_filter( 'manage_edit-surl_columns', array( $this, 'columns_filter' ) );
 	}
 
 	/**
@@ -52,8 +51,8 @@ class Simple_Urls_Legacy_Admin {
 
 		global $post;
 
-		$url   = get_post_meta( $post->ID, '_surleg_redirect', true );
-		$count = get_post_meta( $post->ID, '_surleg_count', true );
+		$url   = get_post_meta( $post->ID, '_surl_redirect', true );
+		$count = get_post_meta( $post->ID, '_surl_count', true );
 
 		$allowed_tags = array(
 			'a' => array(
@@ -80,15 +79,15 @@ class Simple_Urls_Legacy_Admin {
 	 */
 	public function updated_message( $messages ) {
 
-		$surl_object = get_post_type_object( 'surleg' );
+		$surl_object = get_post_type_object( 'surl' );
 
-		$messages['surleg'] = $surl_object->labels->messages;
+		$messages['surl'] = $surl_object->labels->messages;
 
 		$permalink = get_permalink();
 
 		if ( $permalink ) {
-			foreach ( $messages['surleg'] as $id => $message ) {
-				$messages['surleg'][ $id ] = sprintf( $message, $permalink );
+			foreach ( $messages['surl'] as $id => $message ) {
+				$messages['surl'][ $id ] = sprintf( $message, $permalink );
 			}
 		}
 
@@ -99,7 +98,7 @@ class Simple_Urls_Legacy_Admin {
 	 * Add metabox.
 	 */
 	public function add_meta_box() {
-		add_meta_box( 'surleg', __( 'URL Information', 'simple-urls-legacy' ), array( $this, 'meta_box' ), 'surleg', 'normal', 'high' );
+		add_meta_box( 'surl', __( 'URL Information', 'simple-urls-legacy' ), array( $this, 'meta_box' ), 'surl', 'normal', 'high' );
 	}
 
 	/**
@@ -109,13 +108,13 @@ class Simple_Urls_Legacy_Admin {
 
 		global $post;
 
-		printf( '<input type="hidden" name="_surleg_nonce" value="%s" />', esc_attr( wp_create_nonce( plugin_basename( __FILE__ ) ) ) );
+		printf( '<input type="hidden" name="_surl_nonce" value="%s" />', esc_attr( wp_create_nonce( plugin_basename( __FILE__ ) ) ) );
 
-		printf( '<p><label for="%s">%s</label></p>', '_surleg_redirect', esc_html__( 'Redirect URI', 'simple-urls-legacy' ) );
-		printf( '<p><input style="%s" type="text" name="%s" id="%s" value="%s" /></p>', 'width: 99%;', '_surleg_redirect', '_surleg_redirect', esc_attr( get_post_meta( $post->ID, '_surleg_redirect', true ) ) );
+		printf( '<p><label for="%s">%s</label></p>', '_surl_redirect', esc_html__( 'Redirect URI', 'simple-urls-legacy' ) );
+		printf( '<p><input style="%s" type="text" name="%s" id="%s" value="%s" /></p>', 'width: 99%;', '_surl_redirect', '_surl_redirect', esc_attr( get_post_meta( $post->ID, '_surl_redirect', true ) ) );
 		printf( '<p><span class="description">%s</span></p>', esc_html__( 'This is the URL that the Redirect Link you create on this page will redirect to when accessed in a web browser.', 'simple-urls-legacy' ) );
 
-		$count = isset( $post->ID ) ? get_post_meta( $post->ID, '_surleg_count', true ) : 0;
+		$count = isset( $post->ID ) ? get_post_meta( $post->ID, '_surl_count', true ) : 0;
 		/* translators: %d is the counter of clicks. */
 		echo '<p>' . sprintf( esc_html__( 'This URL has been accessed %d times', 'simple-urls-legacy' ), esc_attr( $count ) ) . '</p>';
 	}
@@ -128,11 +127,11 @@ class Simple_Urls_Legacy_Admin {
 	 */
 	public function meta_box_save( $post_id, $post ) {
 
-		$key = '_surleg_redirect';
+		$key = '_surl_redirect';
 
 		// Verify the nonce.
         // phpcs:ignore
-        if (!isset($_POST['_surleg_nonce']) || !wp_verify_nonce($_POST['_surleg_nonce'], plugin_basename(__FILE__))) {
+        if (!isset($_POST['_surl_nonce']) || !wp_verify_nonce($_POST['_surl_nonce'], plugin_basename(__FILE__))) {
 			return;
 		}
 
@@ -150,7 +149,7 @@ class Simple_Urls_Legacy_Admin {
 		};
 
 		// Is the user allowed to edit the URL?
-		if ( ! current_user_can( 'edit_posts' ) || 'surleg' !== $post->post_type ) {
+		if ( ! current_user_can( 'edit_posts' ) || 'surl' !== $post->post_type ) {
 			return;
 		}
 
