@@ -1,0 +1,36 @@
+{
+	"name": "mattryan/simple-urls-legacy",
+	"type": "wordpress-plugin",
+	"description": "Simple URLs Legacy is a fork of the orignial plugin by Nathan Rice and the StudioPress team. As such, it is a complete URL management system that allows you create, manage, and track outbound links from your site by using custom post types and 301 redirects, as it was meant to be.",
+	"homepage": "https://github.com/mattryanco/simple-urls-legacy",
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"php": "^7.0 || ^8",
+		"composer/installers": "^1"
+	},
+	"require-dev": {
+		"php": "^7 || ^8",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
+		"squizlabs/php_codesniffer": "*",
+		"phpcompatibility/phpcompatibility-wp": "*",
+		"wp-coding-standards/wpcs": "^2.3"
+	},
+	"config": {
+		"sort-order": true,
+		"allow-plugins": {
+			"composer/installers": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"scripts": {
+		"phpcs": "phpcs --standard=WordPress --ignore=vendor/,node_modules/,assets/ --extensions=php -p ./",
+		"phpcs-compat": "phpcs --extensions=php --standard=PHPCompatibilityWP --ignore=vendor/,node_modules/,assets/ --runtime-set testVersion 5.6- -p ./",
+		"phpcbf": "phpcbf --standard=WordPress --ignore=vendor/,node_modules/,assets/ --extensions=php -p ./"
+	},
+	"support": {
+		"issues": "https://github.com/mattryanco/simple-urls-legacy/issues",
+		"source": "https://github.com/mattryanco/simple-urls-legacy"
+	}
+}
