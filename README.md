@@ -4,7 +4,7 @@ Plugin that allows you to create custom redirects for pages and posts via a cust
 
 ## Description
 
-Simple URLs Legacy is a fork of the orignial plugin by Nathan Rice and Studiopress team. As such, it is a complete URL management system that allows you create, manage, and track outbound links from your site by using custom post types and 301 redirects, as it was meant to be.
+Simple URLs Legacy is a fork of the original plugin by Nathan Rice and Studiopress team. As such, it is a complete URL management system that allows you create, manage, and track outbound links from your site by using custom post types and 301 redirects, as it was meant to be.
 
 ## Usage
 
