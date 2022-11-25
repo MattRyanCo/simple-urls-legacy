@@ -60,7 +60,7 @@ Eg. example.com/redirect-me/my-simple-url/
 * 11/25/2022 #5FTF #WebDevStudios
 * Applied WordPress coding standards
 * Tweaked plugin description.
-* Added required license declaration in readme.txt
+* Added required license declarations in readme.txt
 
 = 0.10.1  =
 * 10/28/2022 #5FTF #WebDevStudios
