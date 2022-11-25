@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Simple URLs Legacy
  * Plugin URI: https://github.com/mattryanco/simple-urls-legacy/
- * Description: Simple URLs Legacy is a fork of the orignial Simple URLs plugin.
+ * Description: Simple URLs Legacy is a fork of the orignial Simple URLs plugin from Nathan Rice.
  * Author: Matt Ryan
  * Author URI: https://mattryan.co/
  * Version: 0.10.2
