@@ -151,4 +151,3 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://capwebsolutions.com/"
 msgstr ""
-

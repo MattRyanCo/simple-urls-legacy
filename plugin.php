@@ -8,6 +8,8 @@
  * Version: 0.10.3
 
  * Text Domain: simple-urls-legacy
+ * Domain Path: /languages
+
  * License: GNU General Public License v2.0 (or later)
  * License URI: http://www.opensource.org/licenses/gpl-license.php
  *
