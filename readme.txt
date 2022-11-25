@@ -1,11 +1,13 @@
 === Simple URLs Legacy ===
 Contributors: rynonet, nathanrice, studiopress, cliffpaulick, marksabbath, modernnerd
-Donate link: https://www.paypal.com/donate/?hosted_button_id=9XWWUHUSZAFRJ
+Donate link: https://mattryan.co/go/plugin-donate-link/
 Tags: redirect, click tracking, custom post types
 Requires at least: 5.9
 Tested up to: 6.1
-Stable tag: 0.10.0
-
+Stable tag: 0.10.2
+Requires PHP: 7.4
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Simple URLs Legacy is a fork of the orignial plugin by Nathan Rice and Studiopress team. As such, it is a complete URL management system that allows you create, manage, and track outbound links from your site by using custom post types and 301 redirects, as it was meant to be.
 
 == Description ==
@@ -21,7 +23,7 @@ And, by avoiding page based redirects, which is the current trend in masking aff
 1. Upload the entire `simple-urls-legacy` folder to the `/wp-content/plugins/` directory
 2. DO NOT change the name of the `simple-urls-legacy` folder
 3. Activate the plugin through the 'Plugins' menu in WordPress
-4. Navigate to `Settings > Permalinks`. That's it. Just open that screen and it saves. Trust me.
+4. Navigate to `Settings > Permalinks`. That's it. Just open that screen and WordPRess automatically flushes redirects. Trust me.
 5. Navigate to the `Simple URLs Legacy` menu
 6. Create a new URL, or manage existing URLs.
 7. Publish and use the URLs however you want!
@@ -30,7 +32,7 @@ And, by avoiding page based redirects, which is the current trend in masking aff
 
 = When I try to access my new URL, I'm getting a 404 (not found) error =
 
-Sounds like you didn't follow the installation instructions :-)
+Sounds like you didn't complete the installation instructions :-)
 
 Navigate to `Settings > Permalinks` and save them. No need to change anything, just click the save button.
 
@@ -53,6 +55,16 @@ Eg. example.com/redirect-me/my-simple-url/
 2. The URL create/edit screen
 
 == Changelog ==
+
+= 0.10.3  =
+* 11/25/2022 #5FTF #WebDevStudios
+* Add Published date to Simple URLs Legacy admin page
+
+= 0.10.2  =
+* 11/25/2022 #5FTF #WebDevStudios
+* Applied WordPress coding standards
+* Tweaked plugin description.
+* Added required license declarations in readme.txt
 
 = 0.10.1  =
 * 10/28/2022 #5FTF #WebDevStudios
