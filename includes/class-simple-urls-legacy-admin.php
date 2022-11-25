@@ -18,7 +18,7 @@ class Simple_Urls_Legacy_Admin {
 		add_filter( 'post_updated_messages', array( $this, 'updated_message' ) );
 		add_action( 'admin_menu', array( $this, 'add_meta_box' ) );
 		add_action( 'save_post', array( $this, 'meta_box_save' ), 1, 2 );
-		add_action( 'manage_posts_custom_column', array( $this, 'columns_data' ) );
+		add_action( 'manage_surl_posts_custom_column', array( $this, 'columns_data' ), 101 );
 		add_filter( 'manage_edit-surl_columns', array( $this, 'columns_filter' ) );
 		add_filter( 'manage_edit-surl_sortable_columns', array( $this, 'column_sort' ) );
 
