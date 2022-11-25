@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Simple URLs Legacy
- * Plugin URI: https://github.com/capwebsolutions/simple-urls-legacy/
+ * Plugin URI: https://github.com/mattryanco/simple-urls-legacy/
  * Description: Simple URLs Legacy is a fork of the orignial Simple URLs plugin.
- * Author: Matt Ryan | Cap Web Solutions
+ * Author: Matt Ryan
  * Author URI: https://mattryan.co/
- * Version: 0.10.1
+ * Version: 0.10.2
 
  * Text Domain: simple-urls-legacy
  * Domain Path: /languages

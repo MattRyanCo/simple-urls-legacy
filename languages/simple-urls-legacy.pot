@@ -1,5 +1,5 @@
 # Language translation template for Simple Urls Legacy.
-# Copyright (c)2022 Cap Web Solutions (https://capwebsolutions.com).
+# Copyright (c)2022 Matt Ryan (https://mattryan.co).
 # This file is distributed under the GPLv2 or later.
 #
 msgid ""
