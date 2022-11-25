@@ -20,10 +20,12 @@ class Simple_Urls_Legacy_Admin {
 		add_action( 'save_post', array( $this, 'meta_box_save' ), 1, 2 );
 		add_action( 'manage_posts_custom_column', array( $this, 'columns_data' ) );
 		add_filter( 'manage_edit-surl_columns', array( $this, 'columns_filter' ) );
+		add_filter( 'manage_edit-surl_sortable_columns', array( $this, 'column_sort' ) );
+
 	}
 
 	/**
-	 * Colum filter.
+	 * Column filter.
 	 *
 	 * @param  array $columns Columns.
 	 *
@@ -37,9 +39,23 @@ class Simple_Urls_Legacy_Admin {
 			'url'       => __( 'Redirect to', 'simple-urls-legacy' ),
 			'permalink' => __( 'Permalink', 'simple-urls-legacy' ),
 			'clicks'    => __( 'Clicks', 'simple-urls-legacy' ),
+			'published' => __( 'Published', 'simple-urls-legacy' ),
 		);
 
 		return $columns;
+	}
+
+	/**
+	 * Make column sortable.
+	 *
+	 * @param  array $columns Columns.
+	 *
+	 * @return array          SURL column made sortable.
+	 */
+	public function column_sort( $columns ) {
+		$columns['published'] = 'Published';
+		return $columns;
+
 	}
 
 	/**
@@ -53,7 +69,7 @@ class Simple_Urls_Legacy_Admin {
 
 		$url   = get_post_meta( $post->ID, '_surl_redirect', true );
 		$count = get_post_meta( $post->ID, '_surl_count', true );
-
+		$published = get_post_meta( $post->ID, 'date_published', true );
 		$allowed_tags = array(
 			'a' => array(
 				'href' => array(),
@@ -67,7 +83,14 @@ class Simple_Urls_Legacy_Admin {
 			echo wp_kses( make_clickable( get_permalink() ), $allowed_tags );
 		} elseif ( 'clicks' === $column ) {
 			echo esc_html( $count ? $count : 0 );
+		} elseif ( 'published' === $column ) {
+			// Get date pubblished formatted per site settings.
+			echo get_the_date( '', $post );
 		}
+
+		 // Make Published column sortable.
+		 add_filter( 'manage_edit-surl_sortable_columns', 'column_sort' );
+
 	}
 
 	/**
