@@ -67,9 +67,9 @@ class Simple_Urls_Legacy_Admin {
 
 		global $post;
 
-		$url   = get_post_meta( $post->ID, '_surl_redirect', true );
-		$count = get_post_meta( $post->ID, '_surl_count', true );
-		$published = get_post_meta( $post->ID, 'date_published', true );
+		$url          = get_post_meta( $post->ID, '_surl_redirect', true );
+		$count        = get_post_meta( $post->ID, '_surl_count', true );
+		$published    = get_post_meta( $post->ID, 'date_published', true );
 		$allowed_tags = array(
 			'a' => array(
 				'href' => array(),
@@ -88,8 +88,8 @@ class Simple_Urls_Legacy_Admin {
 			echo get_the_date( '', $post );
 		}
 
-		 // Make Published column sortable.
-		 add_filter( 'manage_edit-surl_sortable_columns', 'column_sort' );
+		// Make Published column sortable.
+		add_filter( 'manage_edit-surl_sortable_columns', 'column_sort' );
 
 	}
 
