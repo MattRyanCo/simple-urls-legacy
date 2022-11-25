@@ -56,6 +56,7 @@ Eg. example.com/redirect-me/my-simple-url/
 
 == Changelog ==
 
+=======
 = 0.10.3  =
 * 11/25/2022 #5FTF #WebDevStudios
 * Add Published date to Simple URLs Legacy admin page
