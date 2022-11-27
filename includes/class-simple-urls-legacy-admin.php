@@ -176,8 +176,7 @@ class Simple_Urls_Legacy_Admin {
 			return;
 		}
 
-        // phpcs:ignore
-        $value = isset($_POST[$key]) ? $_POST[$key] : '';
+		$value = isset($_POST[$key]) ? esc_url_raw( $_POST[$key] ) : '';
 
 		if ( $value ) {
 			// Save/update.
