@@ -1,10 +1,10 @@
 === Simple URLs Legacy ===
-Contributors: rynonet, nathanrice, studiopress, cliffpaulick, marksabbath, modernnerd
+Contributors: rynonet
 Donate link: https://mattryan.co/go/plugin-donate-link/
 Tags: redirect, click tracking, custom post types
 Requires at least: 5.9
 Tested up to: 6.1
-Stable tag: 0.10.2
+Stable tag: 1.0.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -55,6 +55,11 @@ Eg. example.com/redirect-me/my-simple-url/
 2. The URL create/edit screen
 
 == Changelog ==
+
+=======
+= 1.0.0  =
+* 12/30/22 #5FTF #WebDevStudios
+* Initial release of Simple Urls Legacy
 
 = 0.10.3  =
 * 11/25/2022 #5FTF #WebDevStudios
