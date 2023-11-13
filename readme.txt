@@ -3,8 +3,8 @@ Contributors: rynonet
 Donate link: https://mattryan.co/go/plugin-donate-link/
 Tags: redirect, click tracking, custom post types
 Requires at least: 5.9
-Tested up to: 6.2
-Stable tag: 1.0.1
+Tested up to: 6.4.1
+Stable tag: 1.0.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -57,6 +57,11 @@ Eg. example.com/redirect-me/my-simple-url/
 == Changelog ==
 
 =======
+= 1.0.2  =
+* 11/13/2023 
+* Updated Tested To vesion for WP 6.4.1
+* Added logic to pull plugin version from main file header
+
 = 1.0.1  =
 * 03/31/2023 #5FTF #WebDevStudios
 * Updated Tested To vesion for WP 6.2
