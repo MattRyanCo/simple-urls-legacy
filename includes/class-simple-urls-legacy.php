@@ -16,6 +16,7 @@ class Simple_Urls_Legacy {
 	 */
 	public function __construct() {
 		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
+		add_action( 'init', array( $this, 'load_textdomain' ) );
 		add_action( 'init', array( $this, 'register_post_type' ) );
 		add_action( 'template_redirect', array( $this, 'count_and_redirect' ) );
 	}

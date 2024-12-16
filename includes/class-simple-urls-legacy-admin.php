@@ -176,7 +176,11 @@ class Simple_Urls_Legacy_Admin {
 			return;
 		}
 
-		$value = isset($_POST[$key]) ? esc_url_raw( $_POST[$key] ) : '';
+		$value = '';
+		if (isset($_POST[$key])) {
+			$value = esc_url_raw( wp_unslash( $_POST[$key] ) );
+		}
+
 
 		if ( $value ) {
 			// Save/update.

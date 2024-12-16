@@ -13,6 +13,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <div id="message" class="error notice">
 	<p>
-		<?php esc_html_e( 'Simple URLs Legacy must run without Lasso Simple URLs. Please deactivate the Lasso Lite version of Simple URLs.', 'surleg' ); ?>
+		<?php esc_html_e( 'Simple URLs Legacy must run without Lasso Simple URLs. Please deactivate the Lasso Lite version of Simple URLs.', 'simple-urls-legacy' ); ?>
 	</p>
 </div>

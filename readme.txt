@@ -1,19 +1,20 @@
 === Simple URLs Legacy ===
-Contributors: rynonet
+Contributors: rynonet, nathanrice, studiopress, cliffpaulick, marksabbath, modernnerd
 Donate link: https://mattryan.co/go/plugin-donate-link/
 Tags: redirect, click tracking, custom post types
 Requires at least: 5.9
-Tested up to: 6.4.1
-Stable tag: 1.0.2
+Tested up to: 6.7.1
+Stable tag: 1.0.3
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Simple URLs Legacy is a fork of the orignial plugin by Nathan Rice and Studiopress team. As such, it is a complete URL management system that allows you create, manage, and track outbound links from your site by using custom post types and 301 redirects, as it was meant to be.
+
+Simple URLs Legacy is a fork of the plugin by Nathan Rice. A URL management system to create, manage, and track outbound links from your site.
+
 
 == Description ==
 
-Simple URLs Legacy is a fork of the orignial plugin by Nathan Rice and Studiopress team. As such, it is a complete URL management system that allows you create, manage, and track outbound links from your site by using custom post types and 301 redirects, as it was meant to be.
-
+Simple URLs Legacy is a fork of the plugin by Nathan Rice. A URL management system to create, manage, and track outbound links from your site.
 == Usage ==
 
 Simple URLs Legacy adds a new custom post type to your admin menu, where you can create, edit, delete, and manage URLs. It stores click counts in the form of a custom field on that custom post type, so it scales really well.
@@ -57,6 +58,19 @@ Eg. example.com/redirect-me/my-simple-url/
 == Changelog ==
 
 =======
+= 1.0.3  =
+* 12/16/2024 
+* Updated Tested To vesion for WP 6.7.1
+* Applied wp_unslash correctly to url sanitization. 
+* Corrected text domain setting in admin class.
+* Aligned license declaration between readme and plugin header.
+* Added license comment block. 
+* Addressed issues with lengthy short description in header. 
+* Added original contributors back into readme header.
+* Adjust loading of constants and get_plugion_data to accomodate WP 6.7 changes in text_domain loading.  
+
+
+
 = 1.0.2  =
 * 11/13/2023 
 * Updated Tested To vesion for WP 6.4.1
