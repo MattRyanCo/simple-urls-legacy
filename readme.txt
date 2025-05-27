@@ -3,7 +3,7 @@ Contributors: rynonet, nathanrice, studiopress, cliffpaulick, marksabbath, moder
 Donate link: https://mattryan.co/go/plugin-donate-link/
 Tags: redirect, click tracking, custom post types
 Requires at least: 5.9
-Tested up to: 6.7.1
+Tested up to: 6.8.1
 Stable tag: 1.0.3
 Requires PHP: 7.4
 License: GPLv2 or later
@@ -58,22 +58,27 @@ Eg. example.com/redirect-me/my-simple-url/
 == Changelog ==
 
 =======
+= 1.0.4  =
+* 05/27/2025
+* Add capability to reset click counter on any simple url.
+* 'Reset Clicks' to 0 from link edit screen or using Quick Edit hover navigation.
+*
 = 1.0.3  =
-* 12/16/2024 
+* 12/16/2024
 * Updated Tested To vesion for WP 6.7.1
-* Applied wp_unslash correctly to url sanitization. 
+* Applied wp_unslash correctly to url sanitization.
 * Corrected text domain setting in admin class.
 * Aligned license declaration between readme and plugin header.
-* Added license comment block. 
-* Addressed issues with lengthy short description in header. 
+* Added license comment block.
+* Addressed issues with lengthy short description in header.
 * Added original contributors back into readme header.
-* Adjust loading of constants and get_plugion_data to accomodate WP 6.7 changes in text_domain loading.  
+* Adjust loading of constants and get_plugion_data to accomodate WP 6.7 changes in text_domain loading.
 
 
 
 = 1.0.2  =
-* 11/13/2023 
-* Updated Tested To vesion for WP 6.4.1
+* 11/13/2023
+* Updated Tested To version for WP 6.4.1
 * Added logic to pull plugin version from main file header
 
 = 1.0.1  =

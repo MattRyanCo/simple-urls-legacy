@@ -21,6 +21,9 @@ class Simple_Urls_Legacy_Admin {
 		add_action( 'manage_surl_posts_custom_column', array( $this, 'columns_data' ), 101 );
 		add_filter( 'manage_edit-surl_columns', array( $this, 'columns_filter' ) );
 		add_filter( 'manage_edit-surl_sortable_columns', array( $this, 'column_sort' ) );
+		add_action( 'admin_init', array( $this, 'handle_reset_clicks' ) );
+		add_filter( 'post_row_actions', array( $this, 'add_row_actions' ), 10, 2 );
+
 
 	}
 
@@ -140,6 +143,17 @@ class Simple_Urls_Legacy_Admin {
 		$count = isset( $post->ID ) ? get_post_meta( $post->ID, '_surl_count', true ) : 0;
 		/* translators: %d is the counter of clicks. */
 		echo '<p>' . sprintf( esc_html__( 'This URL has been accessed %d times', 'simple-urls-legacy' ), esc_attr( $count ) ) . '</p>';
+
+		// Add Reset Clicks button
+		$reset_url = add_query_arg(
+			array(
+				'action'   => 'surleg_reset_clicks',
+				'post_id'  => $post->ID,
+				'_wpnonce' => wp_create_nonce( 'surleg_reset_clicks_' . $post->ID ),
+			),
+			admin_url( 'post.php?post=' . $post->ID . '&action=edit' )
+		);
+		echo '<p><a href="' . esc_url( $reset_url ) . '" class="button">' . esc_html__( 'Reset Clicks', 'simple-urls-legacy' ) . '</a></p>';
 	}
 
 	/**
@@ -188,6 +202,42 @@ class Simple_Urls_Legacy_Admin {
 		} else {
 			// Delete if blank.
 			delete_post_meta( $post->ID, $key );
+		}
+	}
+
+	public function add_row_actions( $actions, $post ) {
+		if ( $post->post_type === 'surl' ) {
+			$reset_url = wp_nonce_url(
+				add_query_arg(
+					array(
+						'action'  => 'surleg_reset_clicks',
+						'post_id' => $post->ID,
+					),
+					admin_url( 'edit.php?post_type=surl' )
+				),
+				'surleg_reset_clicks_' . $post->ID
+			);
+			$actions['reset_clicks'] = '<a href="' . esc_url( $reset_url ) . '">' . esc_html__( 'Reset Clicks', 'simple-urls-legacy' ) . '</a>';
+		}
+		return $actions;
+	}
+
+	public function handle_reset_clicks() {
+		if (
+			isset( $_GET['action'], $_GET['post_id'], $_GET['_wpnonce'] ) &&
+			$_GET['action'] === 'surleg_reset_clicks' &&
+			current_user_can( 'edit_posts' )
+		) {
+			$post_id = intval( $_GET['post_id'] );
+			if ( wp_verify_nonce( $_GET['_wpnonce'], 'surleg_reset_clicks_' . $post_id ) ) {
+				update_post_meta( $post_id, '_surl_count', 0 );
+				if ( isset( $_GET['post'] ) ) {
+					wp_redirect( admin_url( 'post.php?post=' . $post_id . '&action=edit&reset_clicks=1' ) );
+				} else {
+					wp_redirect( admin_url( 'edit.php?post_type=surl&reset_clicks=1' ) );
+				}
+				exit;
+			}
 		}
 	}
 }

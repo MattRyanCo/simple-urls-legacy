@@ -5,7 +5,7 @@
  * Description: Simple URLs Legacy is a fork of the original Simple URLs plugin from Nathan Rice.
  * Author: Matt Ryan
  * Author URI: https://mattryan.co/
- * Version: 1.0.3
+ * Version: 1.0.4
  *
  * Domain Path: /languages
  *
@@ -55,7 +55,7 @@ function surleg_setup() {
 		include_once ABSPATH . '/wp-admin/includes/plugin.php';
 	}
 
-	define( 'SURLEG_PLUGIN_VERSION', get_plugin_data(__FILE__ )['Version'] ); 
+	define( 'SURLEG_PLUGIN_VERSION', get_plugin_data(__FILE__ )['Version'] );
 
 	if ( is_plugin_active( 'simple-urls/plugin.php' ) ) {
 		add_action( 'admin_notices', 'surleg_lasso_notice' );
